@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design your house</title>
+    
+    <style type="text/css">
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    }
+    .banner{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./assets/Images/background.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar{
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .content{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+    }
+    .content h1{
+        font-size: 70px;
+        margin-top: 80px;
+    }
+    .content p{
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px
+    }
+
+    .banner{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(background.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .navbar{
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        width: 150px;
+        cursor: pointer;
+    }
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+
+    }
+    .navbar ul li::after{
+        content: "";
+        height: 3px;
+        width: 0;
+        background:  #009688;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    .navbar ul li:hover::after{
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+    }
+    .content h1{
+        font-size: 70px;
+        margin-top: 80px;
+    }
+    .content p{
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px
+    }
+    .content a{
+        text-decoration: none;
+        color: white;
+    }
+    /**/
+    .transition {
+        -webkit-animation: scaletoright 2000ms both cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                animation: scaletoright 2000ms both cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+
+    @-webkit-keyframes scaletoright {
+        0%   { transform: scaleX(0) skewX(-40deg); transform-origin: left; }
+        50%  { transform: scaleX(1) skewX(0deg); transform-origin: left; }
+        51%  { transform: scaleX(1) skewX(0deg);; transform-origin: right; }
+        100% { transform: scaleX(0) skewX(40deg);; transform-origin: right;}
+    }
+
+    button {
+        position: relative;
+        border: 1px solid #009688;
+        border-radius: 40px;
+        overflow: hidden;
+        color: white;
+        font-size: 18px;
+        background: none;
+        cursor: pointer;
+        padding: 20px 80px;
+        display: inline-block;
+        outline: none;
+        -webkit-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        -moz-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+
+    button:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #009688;
+        -webkit-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        -moz-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+
+    button:hover, button:active {
+        color: white;
+    }
+
+    button:hover:after, button:active:after {
+        width: 100%;
+    }
+    .overlay{
+        background: #cdcdcd;
+        z-index: 2;
+        position: fixed;
+        top: 0%;
+        left: -25%;
+        width: 150%;
+        height: 100%;
+        transform: scaleX(0) skewX(-40deg);
+        transform-origin: left
+    }
+    .overlay h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+        -webkit-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        -moz-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+    .navbar ul li::after{
+        content: "";
+        height: 3px;
+        width: 0;
+        background: #cdcdcd;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        -webkit-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        -moz-transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        transition: all 0.3s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    }
+    .navbar ul li:hover::after, .navbar ul li:active::after{
+        width: 100%;
+    }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="overlay">
+        <h1>Click Next page to the main page</h1>
+    </div>
+    <div class="banner"style="background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./assets/Images/background.jpg)">
+
+        <div class="navbar">
+            <img src="assets/Images/logo.jpg" class="logo">
+            <ul>
+                <li>Home</li>
+                <li>Bedroom</li>
+                <li>Dining</li>
+                <li>Kitchen</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>DESIGN YOUR HOUSE</h1>
+            <p style="width:38%">On this page, you can see anything you want to decorate your house.
+                We will help your house is so beautiful</p>
+            <a href="Mainpage/index.html">
+                <button>Next page</button>
+            </a>
+        </div>
+
+    </div>
+
+    <!--Javascript-->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $( "ul li" ).click(function() {
+        $( ".overlay" ).toggleClass( "transition" );
+        });
+    </script>
+</body>
+</html>
